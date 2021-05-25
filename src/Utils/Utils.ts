@@ -107,7 +107,7 @@ function setColorVariable({ name, color }: any) {
 
 function isColor(value: string) {
   const hexRegex = /[#]+[A-Z|a-z|0-9]{6}/;
-  var rgbRegex = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/;
+  var rgbRegex = /rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)/;
 
   return hexRegex.test(value) || rgbRegex.test(value);
 }
