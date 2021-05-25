@@ -35,9 +35,13 @@ function HexToRGB(hex: string) {
 function getColorVariable(variable: string): string {
   let color = getComputedStyle(document.documentElement)
     .getPropertyValue(variable)
-    .trim();
+    .trim()
+    .toUpperCase();
 
-  if (isColor(color)) {
+  if (color.includes('#')) {
+    if (color === '#FFF') {
+      return '#FFFFFF';
+    }
     return color;
   }
 
