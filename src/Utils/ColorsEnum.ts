@@ -5,7 +5,7 @@ export const ColorsEnum = {
   },
 
   PRIMARY: {
-    variable: '--primary:',
+    variable: '--primary',
     name: 'Primária',
   },
   SECONDARY: {
@@ -26,11 +26,11 @@ export const ColorsEnum = {
   },
   LOGIN_BUTTON_COLOR: {
     variable: '--login-button-color',
-    name: 'Login - Cor Botão',
+    name: 'Entrar - Cor Botão',
   },
   LOGIN_TEXT_COLOR: {
     variable: '--login-text-color',
-    name: 'Login - Cor Texto',
+    name: 'Entrar - Cor Texto',
   },
   WARNING: {
     variable: '--warning-color',
