@@ -35,6 +35,9 @@ export function InputColor({
   }
 
   function formatColor({ type, color }: any) {
+
+    return color;
+    
     if (isColor(color)) {
       if (type.toUpperCase() === 'RGB' && color.includes('#')) {
         color = HexToRGB(color) || '';
