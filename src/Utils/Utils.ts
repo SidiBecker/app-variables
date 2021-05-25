@@ -39,9 +39,7 @@ function getColorVariable(variable: string): string {
     .toUpperCase();
 
   if (color.includes('#')) {
-    if (color === '#FFF') {
-      return '#FFFFFF';
-    }
+    color = validateOnly3Chars(color);
     return color;
   }
 
@@ -65,6 +63,8 @@ function copyVariables(colors: Array<any>) {
         .getPropertyValue(colorObj.variable)
         .trim()
         .toUpperCase();
+
+      color = validateOnly3Chars(color);
 
       if (colorObj.type.toUpperCase() === 'RGB' && color.includes('#')) {
         color = HexToRGB(color) || '';
@@ -114,6 +114,16 @@ function isColor(value: string) {
   var rgbRegex = /rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)/;
 
   return hexRegex.test(value) || rgbRegex.test(value);
+}
+
+function validateOnly3Chars(color: string) {
+  const regex = /#([A-Z|a-z|0-9])\1{2}/;
+
+  if (regex.test(color) && color.length === 4) {
+    color = color + color.substring(1, 4);
+  }
+
+  return color;
 }
 export interface Color {
   name: string;

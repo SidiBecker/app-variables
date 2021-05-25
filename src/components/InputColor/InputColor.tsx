@@ -48,6 +48,10 @@ export function InputColor({
   }
 
   useEffect(() => {
+    if (isColor(color) && color.includes('rgb')) {
+      color = RGBToHex(color);
+    }
+
     setColorState({
       name,
       color,
