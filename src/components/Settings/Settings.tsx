@@ -7,7 +7,7 @@ import './Settings.scss';
 
 export const Settings = () => {
   return (
-    <div className="settings">
+    <div className="settings"> 
       <div className="settings-container">
         <form>
           {AllColors.map((color, index) => (
