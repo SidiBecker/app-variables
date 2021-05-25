@@ -85,6 +85,7 @@ export const Settings = () => {
                 label={color.name}
                 color={color.color}
                 name={color.variable}
+                type={color.type}
                 optional={color.optional}
                 onChangeColor={onChangeColor}
                 onEnableColor={onEnableColor}

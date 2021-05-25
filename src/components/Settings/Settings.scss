@@ -16,6 +16,12 @@
       line-height: 12px;
     }
 
+    input[type="text"]{
+      margin-left: 10px;
+      height: 20px;
+      width: 110px;
+    }
+
     input:not([disabled]) {
       cursor: pointer;
     }

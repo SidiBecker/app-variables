@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { AllColors, ColorsEnum } from './ColorsEnum';
+import { ColorsEnum } from './ColorsEnum';
 
 function RGBToHex(rgb: any) {
   // Choose correct separator
@@ -37,7 +37,7 @@ function getColorVariable(variable: string): string {
     .getPropertyValue(variable)
     .trim();
 
-  if (color.includes('#')) {
+  if (isColor(color)) {
     return color;
   }
 
@@ -59,10 +59,18 @@ function copyVariables(colors: Array<any>) {
     if (colorObj.enabled) {
       let color = getComputedStyle(document.documentElement)
         .getPropertyValue(colorObj.variable)
-        .trim().toUpperCase();
+        .trim()
+        .toUpperCase();
 
-      if (colorObj.type === 'RGB' && color.includes('#')) {
+      if (colorObj.type.toUpperCase() === 'RGB' && color.includes('#')) {
         color = HexToRGB(color) || '';
+      }
+
+      if (
+        colorObj.type.toUpperCase() === 'HEX' &&
+        color.toUpperCase().includes('RGB')
+      ) {
+        color = RGBToHex(color) || '';
       }
 
       ret += colorObj.config + ': ' + color.toUpperCase() + '\r\n';
@@ -79,20 +87,29 @@ function copyVariables(colors: Array<any>) {
 }
 
 function setColorVariable({ name, color }: any) {
-  document.documentElement.style.setProperty(name, color);
+  if (color != null) {
+    document.documentElement.style.setProperty(name, color);
 
-  if (name === ColorsEnum.OUTLINE_COLOR.variable) {
-    if (color.includes('#')) {
-      color = HexToRGB(color);
+    if (name === ColorsEnum.OUTLINE_COLOR.variable) {
+      if (isColor(color) && color.includes('#')) {
+        color = HexToRGB(color);
+      }
+      setColorVariable({
+        name: '--outline-color-opacity',
+        color: color
+          .replace('rgb', 'rgba')
+          .substring(0, color.length)
+          .concat(', 0.3)'),
+      });
     }
-    setColorVariable({
-      name: '--outline-color-opacity',
-      color: color
-        .replace('rgb', 'rgba')
-        .substring(0, color.length)
-        .concat(', 0.3)'),
-    });
   }
+}
+
+function isColor(value: string) {
+  const hexRegex = /[#]+[A-Z|a-z|0-9]{6}/;
+  var rgbRegex = /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/;
+
+  return hexRegex.test(value) || rgbRegex.test(value);
 }
 export interface Color {
   name: string;
@@ -106,4 +123,5 @@ export {
   copyVariables,
   getColorVariable,
   setColorVariable,
+  isColor,
 };
