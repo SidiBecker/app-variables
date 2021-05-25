@@ -60,6 +60,7 @@
         span {
           background-color: var(--login-button-color);
           color: var(--login-text-color);
+          border: 2px solid var(--outline-color-opacity);
 
           font-size: 11px;
           letter-spacing: 1px;
@@ -71,6 +72,10 @@
           margin: 0 auto;
           position: relative;
           top: -20px;
+
+          &::before {
+            opacity: 0.3;
+          }
         }
       }
 

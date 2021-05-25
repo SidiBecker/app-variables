@@ -13,10 +13,19 @@
 
     label {
       margin-left: 5px;
+      line-height: 12px;
     }
 
-    input {
+    input:not([disabled]) {
       cursor: pointer;
+    }
+
+    input[disabled] {
+      opacity: 0.3;
+    }
+
+    .toggle {
+    margin-left: 10px;
     }
   }
 
@@ -27,6 +36,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
+    width: fit-content;
 
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -34,6 +44,7 @@
 
     span {
       margin-left: 10px;
+      width: fit-content;
     }
 
     &:hover {

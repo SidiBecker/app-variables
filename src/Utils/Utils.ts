@@ -53,21 +53,23 @@ const copyToClipboard = (str: string) => {
   document.body.removeChild(el);
 };
 
-function copyVariables() {
+function copyVariables(colors: Array<any>) {
   let ret = '';
-  AllColors.forEach((colorObj) => {
-    let color = getComputedStyle(document.documentElement)
-      .getPropertyValue(colorObj.variable)
-      .trim();
+  colors.forEach((colorObj) => {
+    if (colorObj.enabled) {
+      let color = getComputedStyle(document.documentElement)
+        .getPropertyValue(colorObj.variable)
+        .trim().toUpperCase();
 
-    if (colorObj.type === 'rgb' && color.includes('#')) {
-      color = HexToRGB(color) || '';
-    }
+      if (colorObj.type === 'RGB' && color.includes('#')) {
+        color = HexToRGB(color) || '';
+      }
 
-    ret += colorObj.config + ': ' + color.toUpperCase() + '\r\n';
+      ret += colorObj.config + ': ' + color.toUpperCase() + '\r\n';
 
-    if (colorObj.variable === ColorsEnum.SECONDARY.variable) {
-      ret += 'COLOR_SECONDARY_RGB: ' + HexToRGB(color) + '\r\n';
+      if (colorObj.variable === ColorsEnum.SECONDARY.variable) {
+        ret += 'COLOR_SECONDARY_RGB: ' + HexToRGB(color) + '\r\n';
+      }
     }
   });
 
@@ -76,9 +78,32 @@ function copyVariables() {
   toast.success('Copiado para a área de transferência!', { autoClose: 3000 });
 }
 
+function setColorVariable({ name, color }: any) {
+  document.documentElement.style.setProperty(name, color);
+
+  if (name === ColorsEnum.OUTLINE_COLOR.variable) {
+    if (color.includes('#')) {
+      color = HexToRGB(color);
+    }
+    setColorVariable({
+      name: '--outline-color-opacity',
+      color: color
+        .replace('rgb', 'rgba')
+        .substring(0, color.length)
+        .concat(', 0.3)'),
+    });
+  }
+}
 export interface Color {
   name: string;
   color: string;
 }
 
-export { RGBToHex, HexToRGB, copyToClipboard, copyVariables, getColorVariable };
+export {
+  RGBToHex,
+  HexToRGB,
+  copyToClipboard,
+  copyVariables,
+  getColorVariable,
+  setColorVariable,
+};
