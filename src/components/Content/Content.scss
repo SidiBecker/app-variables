@@ -15,3 +15,14 @@
     flex: 1;
   }
 }
+
+@media only screen and (max-width: 1366px) {
+  .container {
+    .settings {
+      flex: 2;
+    }
+    .demo {
+      flex: 3;
+    }
+  }
+}

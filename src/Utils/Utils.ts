@@ -15,9 +15,18 @@ function RGBToHex(rgb: any) {
   return '#' + r + g + b;
 }
 
+const copyToClipboard = (str: string) => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
+
 export interface Color {
   name: string;
   color: string;
 }
 
-export { RGBToHex };
+export { RGBToHex, copyToClipboard };
