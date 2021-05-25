@@ -1,0 +1,17 @@
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+
+  .form-field {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    label {
+      margin-left: 5px;
+    }
+  }
+}

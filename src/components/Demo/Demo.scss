@@ -1,0 +1,119 @@
+.demo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+
+  .phone-container {
+    height: 600px;
+    width: 370px;
+    background-color: var(--phone-background);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      width: 100%;
+      font-size: 40px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+
+      span {
+        font-weight: 500;
+      }
+
+      .circle {
+        background-color: var(--tertiary);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+      }
+
+      .button {
+        border-radius: 5px;
+        text-align: center;
+
+        span {
+          background-color: var(--login-button-color);
+          color: var(--login-text-color);
+
+          font-size: 11px;
+          letter-spacing: 1px;
+
+          width: fit-content;
+          border-radius: 5px;
+
+          padding: 1px 5px;
+          margin: 0 auto;
+          position: relative;
+          top: -20px;
+        }
+      }
+    }
+
+    .external-apps {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      flex: 1;
+
+      .external-app {
+        background-color: var(--tertiary);
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        margin: 0 10px;
+      }
+    }
+
+    .footer-apps {
+      border-top: 1px solid var(--outline-color);
+      width: 100%;
+      align-self: flex-end;
+      padding-bottom: 10px;
+
+      .apps-label {
+        margin: 10px;
+      }
+
+      .apps-list {
+        display: flex;
+
+        justify-content: space-around;
+
+        .footer-app {
+          border: 1px solid var(--outline-color);
+          border-radius: 10px;
+          height: 70px;
+          width: 70px;
+
+          .new-bullet {
+            background-color: var(--secondary);
+            color: var(--outline-color-button);
+            width: fit-content;
+            border-radius: 10px;
+            font-size: 11px;
+            padding: 0px 3px;
+            position: relative;
+            left: 45px;
+            top: -5px;
+          }
+        }
+      }
+    }
+  }
+}
