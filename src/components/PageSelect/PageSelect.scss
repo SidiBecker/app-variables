@@ -1,0 +1,25 @@
+.pages-select {
+  display: flex;
+  button {
+    height: 40px;
+    font-size: 14px;
+    flex: 1;
+    cursor: pointer;
+
+    border: none;
+
+    &:first-child {
+      border-radius: 10px 0px 0px 0px;
+    }
+
+    &:last-child {
+      border-radius: 0px 10px 0px 0px;
+    }
+
+    &.selected {
+      transition: 300ms;
+      background-color: var(--phone-background);
+      color: #fff;
+    }
+  }
+}

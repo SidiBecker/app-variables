@@ -1,0 +1,104 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--primary);
+  padding: 15px 0;
+
+  .back-button {
+    margin: 0 10px;
+    margin-top: 3px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}
+
+.fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  color: var(--outline-color);
+
+  .field {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    color: var(--outline-color);
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--outline-color);
+
+    .icon-placeholder {
+      display: flex;
+      flex-direction: row;
+      color: var(--outline-color);
+      padding: 0;
+    }
+
+    svg {
+      color: var(--outline-color);
+    }
+
+    div {
+      padding: 5px;
+    }
+    span {
+      margin-top: 3px;
+    }
+  }
+}
+
+.remember-area {
+  width: 99%;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+
+  .remember {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+
+    span {
+      margin-right: 5px;
+      color: var(--outline-color);
+    }
+  }
+
+  .recovery span {
+    color: var(--outline-color);
+    text-decoration: underline;
+  }
+}
+
+.buttons {
+  flex: 1;
+  width: 90%;
+
+  .login-button,
+  .signup-button {
+    height: 50px;
+    margin: 10px;
+
+    button {
+      width: 100%;
+      height: 50px;
+      border-radius: 10px;
+      border: none;
+      background-color: var(--primary);
+      color: var(--outline-color-button);
+    }
+  }
+
+  .divider {
+    color: var(--outline-color);
+  }
+}

@@ -57,6 +57,7 @@ const copyToClipboard = (str: string) => {
 
 function copyVariables(colors: Array<any>) {
   let ret = '';
+
   colors.forEach((colorObj) => {
     if (colorObj.enabled) {
       let color = getComputedStyle(document.documentElement)

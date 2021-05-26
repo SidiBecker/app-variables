@@ -1,12 +1,4 @@
 export const ColorsEnum = {
-  BACKGROUND: {
-    variable: '--phone-background',
-    name: 'Background',
-    config: 'BACKGROUND_COLOR',
-    type: 'hex',
-    optional: false,
-  },
-
   PRIMARY: {
     variable: '--primary',
     name: 'Primária',
@@ -42,8 +34,15 @@ export const ColorsEnum = {
     type: 'hex',
     optional: false,
   },
+  BACKGROUND: {
+    variable: '--phone-background',
+    name: 'Background',
+    config: 'BACKGROUND_COLOR',
+    type: 'hex',
+    optional: false,
+  },
   WARNING: {
-    variable: '--warning-color',
+    variable: '--warning',
     name: 'Aviso',
     config: 'WARNING_BUTTON',
     type: 'hex',
@@ -66,13 +65,13 @@ export const ColorsEnum = {
 };
 
 export const AllColors = [
-  ColorsEnum.BACKGROUND,
   ColorsEnum.PRIMARY,
   ColorsEnum.SECONDARY,
   ColorsEnum.TERTIARY,
   ColorsEnum.OUTLINE_COLOR,
   ColorsEnum.OUTLINE_COLOR_BUTTON,
+  ColorsEnum.BACKGROUND,
+  ColorsEnum.WARNING,
   ColorsEnum.LOGIN_BUTTON_COLOR,
   ColorsEnum.LOGIN_TEXT_COLOR,
-  ColorsEnum.WARNING,
 ];

@@ -64,7 +64,6 @@ export function InputColor({
       <div className="form-field">
         <input
           type="color"
-          id="favcolor"
           name="favcolor"
           value={colorState.color}
           readOnly={!enabled}
@@ -78,7 +77,6 @@ export function InputColor({
         />
         <input
           type="text"
-          id="text"
           name="text"
           value={formatColor({
             type: colorState.type,
