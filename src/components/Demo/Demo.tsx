@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AllPages, PagesEnum } from '../../Utils/PagesEnum';
+import { PagesEnum } from '../../Utils/PagesEnum';
 import { Home } from '../Home/Home';
 import { Login } from '../Login/Login';
 import { PageSelect } from '../PageSelect/PageSelect';
