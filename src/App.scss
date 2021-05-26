@@ -2,4 +2,32 @@
   text-align: center;
   background-color: var(--background);
   height: 100vh;
+
+  .react-toggle {
+
+    .react-toggle-track-check,
+    .react-toggle-track-x {
+      display: none;
+    }
+    .react-toggle-track, &:hover:not(.react-toggle--disabled) .react-toggle-track {
+      background-color: #c2c2c2;
+    }
+
+    .react-toggle-thumb {
+      color: #e6e6e6;
+      background-color: #e6e6e6;
+      border: none;
+    }
+
+    &--checked {
+      .react-toggle-track {
+        background-color: var(--secondary) !important;
+      }
+      .react-toggle-thumb {
+        color: var(--primary);
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+    }
+  }
 }

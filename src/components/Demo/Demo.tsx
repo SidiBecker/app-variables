@@ -1,31 +1,24 @@
 import React, { useState } from 'react';
+import { AllPages, PagesEnum } from '../../Utils/PagesEnum';
 import { Home } from '../Home/Home';
+import { Login } from '../Login/Login';
+import { PageSelect } from '../PageSelect/PageSelect';
 import './Demo.scss';
 
 export const Demo = () => {
-  const [page, setPage] = useState(0);
+  function onChangePage(page: any) {
+    setPage(page);
+  }
+
+  const [page, setPage] = useState(PagesEnum.HOME);
 
   return (
     <div className="demo">
       <div className="demo-area">
-        <div className="pages-select">
-          <button
-            className={page === 0 ? 'selected' : ''}
-            onClick={() => setPage(0)}
-          >
-            Home
-          </button>
-          <button
-            className={page === 1 ? 'selected' : ''}
-            onClick={() => setPage(1)}
-          >
-            Login
-          </button>
-        </div>
-
+        <PageSelect onChange={onChangePage} page={page} />
         <div className="phone-container">
-          {page === 0 && <Home />}
-          {page === 1 && <div>TESTE</div>}
+          {page === PagesEnum.HOME && <Home />}
+          {page === PagesEnum.LOGIN && <Login />}
         </div>
       </div>
     </div>
