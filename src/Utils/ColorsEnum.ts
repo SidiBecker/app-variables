@@ -44,7 +44,7 @@ export const ColorsEnum = {
   WARNING: {
     variable: '--warning',
     name: 'Aviso',
-    config: 'WARNING_BUTTON',
+    config: 'WARNING_COLOR',
     type: 'hex',
     optional: false,
   },
