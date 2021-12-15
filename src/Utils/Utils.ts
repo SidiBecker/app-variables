@@ -29,7 +29,7 @@ function HexToRGB(hex: string) {
       }
     : null;
 
-  return rgb ? `rgb(${rgb?.r}, ${rgb?.g}, ${rgb.b})` : null;
+  return rgb ? `rgb(${rgb?.r}, ${rgb?.g}, ${rgb.b})` : '';
 }
 
 function getColorVariable(variable: string): string {
@@ -78,10 +78,25 @@ function copyVariables(colors: Array<any>) {
         color = RGBToHex(color) || '';
       }
 
-      ret += colorObj.config + ': ' + color.toUpperCase() + '\r\n';
+      color = color.toUpperCase();
+
+      if (color.includes('RGB')) {
+        color = color.replace('RGB(', '').replace(')', '');
+      }
+
+      if (colorObj.type.toUpperCase() === 'HEX' && !colorObj.hashtag) {
+        color = color.replace('#', '');
+      }
+
+      ret += `"${colorObj.config}": "${color}",` + '\r\n';
 
       if (colorObj.variable === ColorsEnum.SECONDARY.variable) {
-        ret += 'COLOR_SECONDARY_RGB: ' + HexToRGB(color) + '\r\n';
+        debugger;
+        color = HexToRGB(color).toUpperCase();
+
+        color = color.replace('RGB(', '').replace(')', '');
+
+        ret += `"COLOR_SECONDARY_RGB": "${color}",` + '\r\n';
       }
     }
   });

@@ -4,7 +4,7 @@ export const ColorsEnum = {
     name: 'Primária',
     config: 'COLOR_PRIMARY',
     type: 'hex',
-    optional: false,
+    optional: false
   },
   SECONDARY: {
     variable: '--secondary',
@@ -12,6 +12,7 @@ export const ColorsEnum = {
     config: 'COLOR_SECONDARY',
     type: 'hex',
     optional: false,
+	hashtag: true
   },
   TERTIARY: {
     variable: '--tertiary',
@@ -19,6 +20,7 @@ export const ColorsEnum = {
     config: 'COLOR_TERTIARY',
     type: 'hex',
     optional: false,
+	hashtag: true
   },
   OUTLINE_COLOR: {
     variable: '--outline-color',
@@ -40,6 +42,7 @@ export const ColorsEnum = {
     config: 'BACKGROUND_COLOR',
     type: 'hex',
     optional: false,
+	hashtag: true
   },
   WARNING: {
     variable: '--warning',
@@ -47,6 +50,7 @@ export const ColorsEnum = {
     config: 'WARNING_COLOR',
     type: 'hex',
     optional: false,
+	hashtag: true
   },
   LOGIN_BUTTON_COLOR: {
     variable: '--login-button-color',
@@ -54,6 +58,7 @@ export const ColorsEnum = {
     config: 'LOGIN_BUTTON_COLOR',
     type: 'hex',
     optional: true,
+	hashtag: true
   },
   LOGIN_TEXT_COLOR: {
     variable: '--login-text-color',
