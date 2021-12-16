@@ -88,7 +88,7 @@ function copyVariables(colors: Array<any>) {
         color = color.replace('#', '');
       }
 
-      ret += `"${colorObj.config}": "${color}",` + '\r\n';
+      ret += `"${colorObj.config}": "${color}",\r\n`;
 
       if (colorObj.variable === ColorsEnum.SECONDARY.variable) {
         debugger;
@@ -96,7 +96,7 @@ function copyVariables(colors: Array<any>) {
 
         color = color.replace('RGB(', '').replace(')', '');
 
-        ret += `"COLOR_SECONDARY_RGB": "${color}",` + '\r\n';
+        ret += `"COLOR_SECONDARY_RGB": "${color}",\r\n`;
       }
     }
   });
