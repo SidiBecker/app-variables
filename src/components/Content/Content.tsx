@@ -9,7 +9,6 @@ export const Content = () => {
     <div className="container">
       <Demo />
       <Settings />
-      <Fotter />
     </div>
   );
 };
