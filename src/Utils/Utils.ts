@@ -23,10 +23,10 @@ function HexToRGB(hex: string) {
 
   const rgb = result
     ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
     : null;
 
   return rgb ? `rgb(${rgb?.r}, ${rgb?.g}, ${rgb.b})` : '';
@@ -91,7 +91,7 @@ function copyVariables(colors: Array<any>) {
       ret += `"${colorObj.config}": "${color}",\r\n`;
 
       if (colorObj.variable === ColorsEnum.SECONDARY.variable) {
-        debugger;
+
         color = HexToRGB(color).toUpperCase();
 
         color = color.replace('RGB(', '').replace(')', '');

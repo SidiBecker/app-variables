@@ -44,6 +44,14 @@ export const ColorsEnum = {
     optional: false,
 	hashtag: true
   },
+  SPLASH_BACKGROUND: {
+    variable: '--splash-background',
+    name: 'Background da Splash',
+    config: 'SPLASH_BACKGROUND',
+    type: 'hex',
+    optional: true,
+	  hashtag: true
+  },
   WARNING: {
     variable: '--warning',
     name: 'Aviso',
@@ -76,6 +84,7 @@ export const AllColors = [
   ColorsEnum.OUTLINE_COLOR,
   ColorsEnum.OUTLINE_COLOR_BUTTON,
   ColorsEnum.BACKGROUND,
+  ColorsEnum.SPLASH_BACKGROUND,
   ColorsEnum.WARNING,
   ColorsEnum.LOGIN_BUTTON_COLOR,
   ColorsEnum.LOGIN_TEXT_COLOR,

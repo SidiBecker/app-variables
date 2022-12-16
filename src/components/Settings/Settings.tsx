@@ -41,7 +41,9 @@ export const Settings = () => {
         ((name === ColorsEnum.BACKGROUND.variable &&
           colorObj.variable === ColorsEnum.LOGIN_BUTTON_COLOR.variable) ||
           (name === ColorsEnum.OUTLINE_COLOR.variable &&
-            colorObj.variable === ColorsEnum.LOGIN_TEXT_COLOR.variable))
+            colorObj.variable === ColorsEnum.LOGIN_TEXT_COLOR.variable) ||
+          (name === ColorsEnum.BACKGROUND.variable &&
+            colorObj.variable === ColorsEnum.SPLASH_BACKGROUND.variable))
       ) {
         colorObj.color = color;
         setColorVariable({ name: colorObj.variable, color });
@@ -58,6 +60,13 @@ export const Settings = () => {
     });
 
     if (!enabled) {
+      if (name === ColorsEnum.SPLASH_BACKGROUND.variable) {
+        onChangeColor({
+          name: ColorsEnum.BACKGROUND.variable,
+          color: getColorVariable(ColorsEnum.BACKGROUND.variable),
+        });
+      }
+
       if (name === ColorsEnum.LOGIN_BUTTON_COLOR.variable) {
         onChangeColor({
           name: ColorsEnum.BACKGROUND.variable,
