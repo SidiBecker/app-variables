@@ -1,5 +1,6 @@
 .pages-select {
   display: flex;
+
   button {
     height: 40px;
     font-size: 14px;
@@ -17,9 +18,20 @@
     }
 
     &.selected {
-      transition: 300ms;
       background-color: var(--phone-background);
       color: #fff;
+
+      &.page-1 {
+        background-color: var(--phone-background);
+      }
+
+      &.page-2 {
+        background-color: var(--primary);
+      }
+
+      &.page-3 {
+        background-color: var(--splash-background);
+      }
     }
   }
 }

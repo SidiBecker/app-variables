@@ -6,7 +6,7 @@ import { AllPages } from '../../Utils/PagesEnum';
 const Page = ({ page, selectedPage, onClick }: any) => {
   return (
     <button
-      className={selectedPage === page ? 'selected' : ''}
+      className={`page-${page.id} ${selectedPage === page ? 'selected' : ''}`}
       onClick={() => onClick(page)}
     >
       {page.label}

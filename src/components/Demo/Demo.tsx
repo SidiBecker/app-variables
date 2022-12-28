@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PagesEnum } from '../../Utils/PagesEnum';
+import { AndroidSplash } from '../AndroidSplash/AndroidSplash';
 import { Home } from '../Home/Home';
 import { Login } from '../Login/Login';
 import { PageSelect } from '../PageSelect/PageSelect';
@@ -19,6 +20,7 @@ export const Demo = () => {
         <div className="phone-container">
           {page === PagesEnum.HOME && <Home />}
           {page === PagesEnum.LOGIN && <Login />}
+          {page === PagesEnum.SPLASH && <AndroidSplash />}
         </div>
       </div>
     </div>

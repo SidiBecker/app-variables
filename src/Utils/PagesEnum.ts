@@ -7,6 +7,10 @@ export const PagesEnum = {
     id: 2,
     label: 'Login',
   },
+  SPLASH: {
+    id: 3,
+    label: 'Splash Android',
+  },
 };
 
-export const AllPages = [PagesEnum.HOME, PagesEnum.LOGIN];
+export const AllPages = [PagesEnum.HOME, PagesEnum.LOGIN, PagesEnum.SPLASH];

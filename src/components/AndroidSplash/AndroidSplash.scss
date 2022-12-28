@@ -1,0 +1,25 @@
+.splash {
+
+  background-color: var(--splash-background);
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
